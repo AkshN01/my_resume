@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ccc28e5de2.js" crossorigin="anonymous"></script>
+    <title>My_Resume</title>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Full Stack Developer </p>
+            <h1>Hi, I'm <span>Akshay </span> and welcome to my webpage</h1>
+        </div>
+    </div>
+</div>
+<!----------------About----------------- -->
+
+<div style="background:black;" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="pptt.jpg" >
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-titles">About Me</h1>
+                <pre>A creative and adaptable individual has the capacity to develop an effective
+and efficient solution with no tolerance for errors and possess a positive 
+atitude towards individual goals and an organizational goal.</pre>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab", id="skills">
+                        <ul>
+                            <li><span>Frontend Development</span><br>HTML, CSS,JavaScript, Angular JS</li>
+                            <br>
+                            <li><span>Backend Development</span><br>Core java and Advance Java, Python, DBMS(oracle, MySQL, SQL Developer tool)</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2014-2015</span><br>SSC from O.L.P.S High School, State Board</li>
+                            <br>
+                            <li><span>2015-2017</span><br>PUC from Shree Damodar Higher Secondary School Of Science, State Board</li>
+                            <li><span>2017-2021</span><br>Graduation from KLE College Of Engineering And Technology,VTU</li>
+                            <li><span>2022</span><br>Full Stack Development Course from KodNest Training Institute, Bengaluru</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------Contact-------------------- -->
+<div style="background: black ;" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-tiltle">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope-open"></i>akshaynyk8@gmail.com</p>
+                <p><i class="fa-solid fa-mobile-retro"></i>7030991739</p>
+                <div class="social-icon">
+                    <a href="https://www.linkedin.com/in/akshay-naik-ab5673180"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="Resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right"></div>
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your email" required>
+                <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks=document.getElementsByClassName("tab-links")
+    var tabcontents=document.getElementsByClassName("tab-contents")
+    function openTab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+            
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzaNofwlOqhT8-Z4sH0rJBwdWi2kbQDLulL5HPSqfBQK6PBavdSz99Nz9QwGyDrr7sN/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },2000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
