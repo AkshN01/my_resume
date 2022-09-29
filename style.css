@@ -1,0 +1,226 @@
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    background: #080808;
+    color: #fff;
+    height: 100%;
+}
+
+#header{
+    width: 100%;
+    height: 100%;
+    background-image: url(planet-astronomy-outer-space-dark-black-background-5k-8k-7680x4320-1524.jpg);
+    background-size: cover;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: wrap;
+
+}
+
+.logo{
+    width: 140px;
+}
+nav ul li{
+    
+    list-style: none;
+    margin: 10px 20px;
+    display: inline-block;
+
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size:18px ;
+    position: relative;
+   
+}
+
+nav ul li a::after{
+    content: '';
+    background: rgb(241, 8, 8);
+ 
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 4px;
+    transition: 0.3s;
+
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+.header-text{
+    margin: 20px;
+    font-size: 20px;
+}
+.header-text h1{
+    margin: 30px;
+    font-size: 60px;
+}
+.header-text h1 span {
+   color: crimson;
+}
+
+//------------------About------------------
+
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1 {
+    flex-basis: 30%;
+}
+
+.about-col-1 img{
+    width: 100%;
+    border-radius: 20px;
+}
+,.about-col-2{
+    flex-basis: 65%;
+}
+.sub-titles{
+    font-size:60px;
+    font-weight: 550;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 100px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    
+
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: crimson ;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.4s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin:10px 0;
+
+}
+.tab-contents ul li span{
+    color: crimson;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* -------contact------------------ */
+
+
+.contact-left{
+    flex-basis: 30%;
+
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: crimson;
+    margin-right: 15px;
+    font-size: 25px;
+
+}
+
+.social-icon{
+    margin-top: 30px;
+
+}
+
+.social-icon a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: white ;
+    display: inline-block;
+    transition: 0.7s;
+}
+.social-icon a:hover{
+color: crimson ;
+transform: translateY(-6px);
+}
+.btn.btn2{
+    border-radius: 3px;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+}
+.contact-right form{
+    width: 100%;
+
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 15px;
+    border-radius:6px ;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#msg{
+    color: chartreuse;
+    margin-top: 10px;
+    display: block;
+}
